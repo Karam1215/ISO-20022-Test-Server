@@ -65,7 +65,7 @@ The ISO20022 Test Server project is designed to help validate and process ISO 20
 ## Usage
 
 1. Once the backend is running, you can interact with the service via the exposed API.
-2. Example POST request to validate an ISO 20022 message:
+2. POST request to validate an ISO 20022 message:
 
     **URL**: `http://localhost:8080/api/validate-iso20022`
 
