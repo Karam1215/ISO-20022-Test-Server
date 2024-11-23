@@ -24,22 +24,16 @@ public class ISO20022Controller {
     @PostMapping(value = "/process", consumes = "application/xml", produces = "application/xml")
     public ResponseEntity<String> processMessage(@RequestBody String xmlMessage) {
         try {
-            // Validate the XML
             XMLValidator.validateXML(xmlMessage);
 
-            // Parse the XML to Java Object
             ISO20022Message message = ISO20022Handler.parseXML(xmlMessage);
 
-            // Log received message
             logger.info("Received Message: {}", message);
 
-            // Create acknowledgment message
             ISO20022Message response = createAcknowledgment(message);
 
-            // Convert acknowledgment message to XML
             String responseXml = ISO20022Handler.generateXML(response);
 
-            // Return success response
             return ResponseEntity.ok()
                     .header("Status", "Accepted")
                     .body(responseXml);
@@ -58,27 +52,21 @@ public class ISO20022Controller {
     }
 
     private ISO20022Message createAcknowledgment(ISO20022Message receivedMessage) {
-        // Initialize the response message
         ISO20022Message response = new ISO20022Message();
 
-        // Create a new AccountOpeningRequest for the acknowledgment
         ISO20022Message.AccountOpeningRequest ackRequest = new ISO20022Message.AccountOpeningRequest();
 
-        // Populate the acknowledgment fields based on the received message
         if (receivedMessage.getAcctOpngReq() != null) {
             ISO20022Message.AccountOpeningRequest receivedRequest = receivedMessage.getAcctOpngReq();
 
-            // Set message ID if present
             if (receivedRequest.getMsgId() != null) {
                 ackRequest.setMsgId(receivedRequest.getMsgId());
             }
 
-            // Set creation date-time if present
             if (receivedRequest.getCreationDateTime() != null) {
                 ackRequest.setCreationDateTime(receivedRequest.getCreationDateTime());
             }
 
-            // Optional: Populate other fields as needed, such as Initiating Party or Account
             if (receivedRequest.getInitiatingParty() != null) {
                 ISO20022Message.InitiatingParty receivedInitiatingParty = receivedRequest.getInitiatingParty();
                 ISO20022Message.InitiatingParty ackInitiatingParty = new ISO20022Message.InitiatingParty();
@@ -87,7 +75,6 @@ public class ISO20022Controller {
                 ackRequest.setInitiatingParty(ackInitiatingParty);
             }
 
-            // Optional: Handle Supplementary Data, if needed
             if (receivedRequest.getSupplementaryData() != null) {
                 ISO20022Message.SupplementaryData receivedSupplementaryData = receivedRequest.getSupplementaryData();
                 ISO20022Message.SupplementaryData ackSupplementaryData = new ISO20022Message.SupplementaryData();
