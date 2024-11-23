@@ -45,7 +45,7 @@ The ISO20022 Test Server project is designed to help validate and process ISO 20
 
 1. Clone the repository:
     ```sh
-    git clone git@github.com:Karam1215/ISO20022-Test-Server.git
+    git clone github.com:Karam1215/ISO20022-Test-Server.git
     cd ISO20022-Test-Server
     ```
 
