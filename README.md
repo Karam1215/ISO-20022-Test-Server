@@ -96,7 +96,7 @@ The ISO20022 Test Server project is designed to help validate and process ISO 20
                     <Prtry>Saving</Prtry>
                 </AcctTp>
                 <Ccy>RUB</Ccy>
-                <IBAN>RU12345678901234567890123456</IBAN>
+                <IBAN>RU1234567890123456789</IBAN>
             </Acct>
             <SplmtryData>
                 <PlcAndNm>Moscow</PlcAndNm>
