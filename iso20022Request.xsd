@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02" targetNamespace="urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02" elementFormDefault="qualified">
+
+    <!-- Root element -->
+    <xs:element name="Document">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AcctOpngReq">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Message ID -->
+                            <xs:element name="MsgId" type="xs:string" />
+
+                            <!-- Creation Date and Time -->
+                            <xs:element name="CreDtTm" type="xs:dateTime" />
+
+                            <!-- Initiating Party -->
+                            <xs:element name="InitgPty">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Nm" type="xs:string" />
+                                        <xs:element name="Id">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="PrvtId">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Othr">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="Id" type="xs:string" />
+                                                                            <xs:element name="SchmeNm">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="Cd" type="xs:string" />
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <!-- Account Information -->
+                            <xs:element name="Acct">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="AcctTp">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Prtry" type="xs:string" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Ccy" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <!-- Supplementary Data -->
+                            <xs:element name="SplmtryData">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="PlcAndNm" type="xs:string" />
+                                        <xs:element name="Envlp">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Any" type="xs:string" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
