@@ -21,7 +21,7 @@ public class ISO20022Controller {
 
     private static final Logger logger = LoggerFactory.getLogger(ISO20022Controller.class);
 
-    @PostMapping(value = "/process", consumes = "application/xml", produces = "application/xml")
+    @PostMapping(value = "/validate-iso20022", consumes = "application/xml", produces = "application/xml")
     public ResponseEntity<String> processMessage(@RequestBody String xmlMessage) {
         try {
             XMLValidator.validateXML(xmlMessage);
