@@ -62,7 +62,7 @@ The ISO20022 Test Server project is designed to help validate and process ISO 20
 ### Testing with Postman
 
 1. Import the Postman collection file (included in the project) to start testing the API endpoints.
-2. Test the IBAN validation and XML validation by sending the appropriate requests.
+2. Test the IBAN, cities and currencies validation and the XML validation by sending the appropriate requests.
 
 ## Usage
 
