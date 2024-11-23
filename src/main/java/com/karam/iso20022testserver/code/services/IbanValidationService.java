@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 @Service
 public class IbanValidationService {
 
+    // we already have the same pattern in the XSD.
     private static final Pattern IBAN_PATTERN = Pattern.compile("^[A-Z]{2}\\d{2}[A-Z0-9]{4,30}$");
 
     public void validateIban(String iban) {
