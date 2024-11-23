@@ -20,7 +20,9 @@ The ISO20022 Test Server project is designed to help validate and process ISO 20
 ## Technologies Used
 
 - **Backend**: Java with Spring Boot
-- **XML Validation**: JAXB, XML Schema (XSD)
+- **The XML Schema** <code>iso20022.xsd</code> is located in the following path:
+        <pre><code>src/main/resources/schemas/iso20022.xsd</code></pre>
+
 - **IBAN Validation**: Custom service for IBAN format validation
 - **Testing Tools**: Postman for API testing
 - **Java SDK**: OpenJDK 22
