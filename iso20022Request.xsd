@@ -72,10 +72,34 @@
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:enumeration value="USD"/>
-                                                    <xs:enumeration value="EUR"/>
                                                     <xs:enumeration value="GBP"/>
+                                                    <xs:enumeration value="EUR"/>
                                                     <xs:enumeration value="JPY"/>
+                                                    <xs:enumeration value="AUD"/>
                                                     <xs:enumeration value="RUB"/>
+                                                    <xs:enumeration value="CNY"/>
+                                                    <xs:enumeration value="AED"/>
+                                                    <xs:enumeration value="THB"/>
+                                                    <xs:enumeration value="TRY"/>
+                                                    <xs:enumeration value="BRL"/>
+                                                    <xs:enumeration value="INR"/>
+                                                    <xs:enumeration value="MXN"/>
+                                                    <xs:enumeration value="NGN"/>
+                                                    <xs:enumeration value="EGP"/>
+                                                    <xs:enumeration value="ARS"/>
+                                                    <xs:enumeration value="HKD"/>
+                                                    <xs:enumeration value="KRW"/>
+                                                    <xs:enumeration value="SGD"/>
+                                                    <xs:enumeration value="IDR"/>
+                                                    <xs:enumeration value="PKR"/>
+                                                    <xs:enumeration value="PEN"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="IBAN">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="[A-Z]{2}[0-9]{2}[A-Z0-9]{4,30}"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
@@ -91,11 +115,37 @@
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <!-- Enumeration for valid cities -->
-                                                    <xs:enumeration value="Moscow"/>
-                                                    <xs:enumeration value="London"/>
                                                     <xs:enumeration value="New York"/>
+                                                    <xs:enumeration value="Los Angeles"/>
+                                                    <xs:enumeration value="London"/>
                                                     <xs:enumeration value="Paris"/>
+                                                    <xs:enumeration value="Tokyo"/>
+                                                    <xs:enumeration value="Sydney"/>
+                                                    <xs:enumeration value="Moscow"/>
+                                                    <xs:enumeration value="Beijing"/>
+                                                    <xs:enumeration value="Dubai"/>
+                                                    <xs:enumeration value="Shanghai"/>
                                                     <xs:enumeration value="Berlin"/>
+                                                    <xs:enumeration value="Madrid"/>
+                                                    <xs:enumeration value="Rome"/>
+                                                    <xs:enumeration value="Bangkok"/>
+                                                    <xs:enumeration value="Istanbul"/>
+                                                    <xs:enumeration value="Rio de Janeiro"/>
+                                                    <xs:enumeration value="Mumbai"/>
+                                                    <xs:enumeration value="Mexico City"/>
+                                                    <xs:enumeration value="Lagos"/>
+                                                    <xs:enumeration value="Cairo"/>
+                                                    <xs:enumeration value="Buenos Aires"/>
+                                                    <xs:enumeration value="Hong Kong"/>
+                                                    <xs:enumeration value="Seoul"/>
+                                                    <xs:enumeration value="Singapore"/>
+                                                    <xs:enumeration value="Delhi"/>
+                                                    <xs:enumeration value="Jakarta"/>
+                                                    <xs:enumeration value="Karachi"/>
+                                                    <xs:enumeration value="Kolkata"/>
+                                                    <xs:enumeration value="Chennai"/>
+                                                    <xs:enumeration value="Lahore"/>
+                                                    <xs:enumeration value="Lima"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>

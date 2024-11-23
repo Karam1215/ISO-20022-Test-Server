@@ -85,7 +85,9 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "InitiatingPartyType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"name", "id"})
+    @XmlType(name = "InitiatingPartyType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"name", "id"})
     public static class InitiatingParty {
 
         @XmlElement(name = "Nm")
@@ -112,7 +114,9 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "PartyIdentificationType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"privateId"})
+    @XmlType(name = "PartyIdentificationType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"privateId"})
     public static class PartyIdentification {
 
         @XmlElement(name = "PrvtId")
@@ -128,7 +132,9 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "PrivateIdentificationType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"other"})
+    @XmlType(name = "PrivateIdentificationType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"other"})
     public static class PrivateIdentification {
 
         @XmlElement(name = "Othr")
@@ -144,7 +150,9 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "OtherIdentificationType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"id", "schemeName"})
+    @XmlType(name = "OtherIdentificationType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"id", "schemeName"})
     public static class OtherIdentification {
 
         @XmlElement(name = "Id")
@@ -171,7 +179,9 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "SchemeNameType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"code"})
+    @XmlType(name = "SchemeNameType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"code"})
     public static class SchemeName {
 
         @XmlElement(name = "Cd")
@@ -187,7 +197,8 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "AccountType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02")
+    @XmlType(name = "AccountType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02")
     public static class Account {
 
         @XmlElement(name = "AcctTp")
@@ -195,6 +206,9 @@ public class ISO20022Message {
 
         @XmlElement(name = "Ccy")
         private String currency;
+
+        @XmlElement(name = "IBAN")
+        private String iban;  // IBAN for handling various international account formats
 
         public AccountType getAccountType() {
             return accountType;
@@ -211,10 +225,20 @@ public class ISO20022Message {
         public void setCurrency(String currency) {
             this.currency = currency;
         }
+
+        public String getIban() {
+            return iban;
+        }
+
+        public void setIban(String iban) {
+            this.iban = iban;
+        }
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "AccountTypeDetails", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"proprietary"})
+    @XmlType(name = "AccountTypeDetails",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"proprietary"})
     public static class AccountType {
 
         @XmlElement(name = "Prtry")
@@ -230,7 +254,9 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "SupplementaryDataType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"placeAndName", "envelope"})
+    @XmlType(name = "SupplementaryDataType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"placeAndName", "envelope"})
     public static class SupplementaryData {
 
         @XmlElement(name = "PlcAndNm")
@@ -257,7 +283,9 @@ public class ISO20022Message {
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "EnvelopeType", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02", propOrder = {"any"})
+    @XmlType(name = "EnvelopeType",
+            namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.02",
+            propOrder = {"any"})
     public static class Envelope {
 
         @XmlElement(name = "Any")

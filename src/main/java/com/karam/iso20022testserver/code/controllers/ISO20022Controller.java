@@ -96,7 +96,6 @@ public class ISO20022Controller {
                 ackRequest.setSupplementaryData(ackSupplementaryData);
             }
         }
-        // Set the AccountOpeningRequest into the response
         response.setAcctOpngReq(ackRequest);
 
         return response;
