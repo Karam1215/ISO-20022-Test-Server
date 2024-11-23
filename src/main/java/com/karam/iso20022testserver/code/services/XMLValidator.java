@@ -14,7 +14,7 @@ import org.xml.sax.SAXException;
 
 public class XMLValidator {
 
-    private static final String SCHEMA_FILE = "/home/karam/ISO20022-Test-Server/iso20022Request.xsd";
+    private static final String SCHEMA_FILE = "/home/karam/ISO20022-Test-Server/src/main/resources/schemas/iso20022Request.xsd";
 
     public static void validateXML(String xml) throws SAXException, IOException {
       try {
